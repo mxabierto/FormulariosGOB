@@ -127,7 +127,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static/'),
 ]
 
-STATIC_URL = '/static/'
+STATIC_URL = os.environ.get('CDN_STATIC_FILES_URL', 'http://datos.gob.mx/formularios/assets/static/')
 MAIL_GUN_API_KEY = os.environ.get('MAIL_GUN_API_KEY', None)
 TO_MAIL_GUN = os.environ.get('TO_MAIL_GUN', None)
 
