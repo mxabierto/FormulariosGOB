@@ -64,6 +64,9 @@
         .on('success.form.fv', function(e, data) {
 
           e.preventDefault();
+          swal({confirmButtonText: "CERRAR", title: "Muchas gracias por tu participación", type: "success" });
+
+          /*
 
           var instContent = $('#instInput').val();
           var datosContent = $('#datos').val();
@@ -79,9 +82,9 @@
               html: "<p><strong>Institución generadora: </strong><span>" + instContent +"</span></p><br/><p><strong>Nombre del conjunto de datos: </strong><span>" + datosContent +"</span></p><br/><p><strong>Descripción del conjunto de datos: </strong><span>" + descContent +"</span></p><br/><p><strong>Nombre: </strong><span>" + nombreContent +"</span></p><br/><p><strong>Apellido: </strong><span>" + apContent +"</span></p><br/><p><strong>Correo: </strong><span>" + correoContent +"</span></p><br/>"
             }).done(function(response){
                 if(response.message == 'ok'){
-                    swal({confirmButtonText: "CERRAR", title: "Muchas gracias por tu participación", type: "success" });    
+                    swal({confirmButtonText: "CERRAR", title: "Muchas gracias por tu participación", type: "success" });
                 } else {
-                    swal({confirmButtonText: "ACEPTAR", title: "Error", text: "Por favor intentalo nuevamente.", type: "error" });  
+                    swal({confirmButtonText: "ACEPTAR", title: "Error", text: "Por favor intentalo nuevamente.", type: "error" });
                 }
             }).fail(function(){
                 swal({
@@ -90,4 +93,5 @@
                   text: "Por favor intentalo nuevamente.",
                   type: "error" });
             });
+          */
     })</script>  
