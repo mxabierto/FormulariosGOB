@@ -128,3 +128,5 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_URL = '/static/'
+MAIL_GUN_API_KEY = os.environ.get('MAIL_GUN_API_KEY', None)
+

@@ -1,6 +1,7 @@
 import requests
 import json
 from django.shortcuts import render
+from django.conf import settings
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse, Http404
 
@@ -12,6 +13,7 @@ def informa(request):
 def reportar(request):
 	return render(request, 'reportar.html', {'media_url': request.GET.get('media_url', '')})
 
+
 @csrf_exempt
 def send(request):
 	if request.method != 'POST':
@@ -19,7 +21,7 @@ def send(request):
 
 	response_mail = requests.post(
         "https://api.mailgun.net/v3/participa.gob.mx/messages",
-        auth=("api", "key-9vrakrqda0sga0m18dfrf536cq-6ksm3"),
+        auth=("api", str(settings.MAIL_GUN_API_KEY)),
         data={"from": "{0}".format(request.POST.get('from')),
               "to": ["{0}".format(request.POST.get('to'))],
               "subject": "{0}".format(request.POST.get('subject')),
