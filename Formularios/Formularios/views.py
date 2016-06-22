@@ -22,7 +22,7 @@ def send(request):
 	response_mail = requests.post(
         "https://api.mailgun.net/v3/participa.gob.mx/messages",
         auth=("api", str(settings.MAIL_GUN_API_KEY)),
-        data={"from": "{0}".format(request.POST.get('from')),
+        data={"from": "Reporte DGM <{0}>".format(settings.TO_MAIL_GUN),
               "to": ["{0}".format(request.POST.get('to'))],
               "subject": "{0}".format(request.POST.get('subject')),
               "html": "{0}".format(request.POST.get('html').encode('utf-8'))})
