@@ -83,7 +83,7 @@
               subject: "Reporte DGM (A119)",
               html: "<p><strong>URL: </strong><span>" + urlContent +"</span></p><br/><p><strong>Título del problema: </strong><span>" + tituloContent +"</span></p><br/><p><strong>Tipo del problema: </strong><span>" + tipoContent +"</span></p><br/><p><strong>Descripción del problema: </strong><span>" + descContent +"</span></p><br/><p><strong>Nombre: </strong><span>" + nombreContent +"</span></p><br/><p><strong>Apellido: </strong><span>" + apContent +"</span></p><br/><p><strong>Correo: </strong><span>" + correoContent +"</span></p><br/>",
               text: ""
-            }).done(function(){
+            }).done(function(response){
                 if(response.message == 'ok'){
                     swal({confirmButtonText: "CERRAR", title: "Muchas gracias por tu participación", type: "success" });    
                 } else {
