@@ -1,6 +1,26 @@
 {% load staticfiles %}
-<!DOCTYPE html> <html lang="es"> <head> <meta charset="utf-8"> <title>Catálogo de Datos Abiertos</title> <meta name="description" content=""> <meta name="viewport" content="width=device-width"> <!-- Place favicon.ico and apple-touch-icon.png in the root directory --> <link rel="shortcut icon" href="img/favicon.ico"> <link rel="stylesheet" href="{% static "css/vendor.2107989e.css" %}"> <link rel="stylesheet" href="{% static "css/style.4a96c47a.css" %}"> <link rel="import" href="{% static "bower_components/polymer/polymer.html" %}"> <link rel="import" href="{% static "bower_components/dgm-navbar/dgm-navbar.html" %}"> <link rel="import" href="{% static "bower_components/dgm-footer/dgm-footer.html" %}">  <body> <dgm-navbar></dgm-navbar> <div class="container-fluid" style="margin-top:20px"> <div class="row"> <div class="col-md-12"> <h1>Reportar un Conjunto | <strong class="text-higlight">BETA</strong></h1> <div id="report-container" class="row"> <div class="col-md-8"> <p>Esta no es una solicitud de transparencia al INAI.</p> <p>Utilice el siguiente formulario para reportar un problema o solución que haya identificado para este recurso de datos. El reporte se le enviará automáticamente al encargado de generar y actualizar los datos con el fin de mejorar continuamente su calidad y/o accesibilidad a través de esta retroalimentación.</p> <p>Sus datos personales no son obligatorios para este formulario aunque dejar su nombre y correo electrónico pueden ayudar a darle seguimiento al reporte. Para obtener detalles adicionales, consulte nuestra política de privacidad.</p> <form id="reportForm"> <div class="form-group"> <label for="url">URL del recurso</label> <input type="text" name="url" class="form-control" value="" disabled id="urlInput"> </div> <div class="form-group"> <label for="dataset">Título del problema</label> <input type="text" name="dataset" class="form-control" id="titulo"> </div> <div class="form-group"> <label for="type">Tipo de problema</label> <div class="custom-select"> <select name="type" class="form-control" id="tipo"> <option value="">Selecciona un tipo de problema <option value="1">Calidad <option value="2">Metadatos <option value="3">Url rota <option value="4">Datos incompletos </select> </div> </div> <div class="form-group"> <label for="description">Descripción del problema</label> <input type="text" name="description" class="form-control" id="descripcion"> </div> <h2><strong>Datos de Contacto</strong> | Opcional</h2> <div class="form-group"> <label for="name">Nombre</label> <input type="text" for="name" class="form-control" id="nombre"> </div> <div class="form-group"> <label for="last_name">Apellido</label> <input type="text" for="last_name" class="form-control" id="apellido"> </div> <div class="form-group"> <label for="email">Correo electrónico</label> <input type="emal" for="email" class="form-control" id="correo"> </div> <button type="submit" class="btn btn-primary">Enviar</button> <p><a href="privacy.html">Consulta nuestro aviso de privacidad</a></p> </form> </div> </div> </div> </div> </div> <dgm-footer></dgm-footer> <script src="{% static "js/vendor.50182432.js" %}"></script> <script type="text/javascript">$('#urlInput').val(window.location.href.split('?')[1].replace('media_url=',''));
-	
+<!DOCTYPE html> <html lang="es"> <head> <meta charset="utf-8"> <title>Catálogo de Datos Abiertos</title> <meta name="description" content=""> <meta name="viewport" content="width=device-width"> <!-- Place favicon.ico and apple-touch-icon.png in the root directory --> <link rel="shortcut icon" href="img/favicon.ico"> <link rel="stylesheet" href="{% static "css/vendor.2107989e.css" %}"> <link rel="stylesheet" href="{% static "css/style.4a96c47a.css" %}"> <link rel="import" href="{% static "bower_components/polymer/polymer.html" %}"> <link rel="import" href="{% static "bower_components/dgm-navbar/dgm-navbar.html" %}"> <link rel="import" href="{% static "bower_components/dgm-footer/dgm-footer.html" %}">  <body> <dgm-navbar></dgm-navbar> <div class="container-fluid" style="margin-top:20px"> <div class="row"> <div class="col-md-12"> <h1>Reportar un Conjunto | <strong class="text-higlight">BETA</strong></h1> <div id="report-container" class="row"> <div class="col-md-8"> <p>Esta no es una solicitud de transparencia al INAI.</p> <p>Utilice el siguiente formulario para reportar un problema o solución que haya identificado para este recurso de datos. El reporte se le enviará automáticamente al encargado de generar y actualizar los datos con el fin de mejorar continuamente su calidad y/o accesibilidad a través de esta retroalimentación.</p> <p>Sus datos personales no son obligatorios para este formulario aunque dejar su nombre y correo electrónico pueden ayudar a darle seguimiento al reporte. Para obtener detalles adicionales, consulte nuestra política de privacidad.</p>
+    <form action="https://docs.google.com/a/fractalmedia.mx/forms/d/1jtvZnGSU-Ovs0JieE1EU1a_Fasa_BKH4niopuKKXfEY/formResponse" target="_self" method="POST" id="mG61Hd">
+        <div class="form-group"> <label for="url">URL del recurso</label> <input name="entry.1197475193" type="text" name="url" class="form-control" value="" disabled id="urlInput"> </div>
+        <div class="form-group"> <label for="dataset">Título del problema</label> <input type="text" name="entry.1908722232" class="form-control" id="titulo"> </div>
+        <div class="form-group"> <label for="type">Tipo de problema</label> <div class="custom-select"> <select name="entry.1478375003" class="form-control" id="tipo"> <option value="">Selecciona un tipo de problema <option value="Calidad">Calidad <option value="Metadatos">Metadatos <option value="URL rota">URL rota <option value="Datos incompletos">Datos incompletos </select> </div> </div>
+            <div class="form-group"> <label for="description">Descripción del problema</label> <input type="text" name="entry.1133113920" class="form-control" id="descripcion"> </div>
+            <h2><strong>Datos de Contacto</strong> | Opcional</h2>
+            <div class="form-group"> <label for="name">Nombre</label> <input type="text" for="name" class="form-control" id="nombre" name="entry.2122328348"> </div>
+            <div class="form-group"> <label for="last_name">Apellido</label> <input type="text" for="last_name" class="form-control" id="apellido" name="entry.2023976079"> </div>
+            <div class="form-group"> <label for="email">Correo electrónico</label> <input type="emal" for="email" class="form-control" id="correo" name="entry.1542711411"> </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+            <p><a href="privacy.html">Consulta nuestro aviso de privacidad</a></p>
+    </form>
+</div>
+</div>
+</div>
+</div>
+</div>
+<dgm-footer></dgm-footer>
+<script src="{% static "js/vendor.50182432.js" %}"></script>
+<script type="text/javascript">$('#urlInput').val(window.location.href.split('?')[1].replace('media_url=',''));
+
 			function getCookie(name) {
 		    var cookieValue = null;
 		    if (document.cookie && document.cookie != '') {
@@ -85,9 +105,9 @@
               text: ""
             }).done(function(response){
                 if(response.message == 'ok'){
-                    swal({confirmButtonText: "CERRAR", title: "Muchas gracias por tu participación", type: "success" });    
+                    swal({confirmButtonText: "CERRAR", title: "Muchas gracias por tu participación", type: "success" });
                 } else {
-                    swal({confirmButtonText: "ACEPTAR", title: "Error", text: "Por favor intentalo nuevamente.", type: "error" });  
+                    swal({confirmButtonText: "ACEPTAR", title: "Error", text: "Por favor intentalo nuevamente.", type: "error" });
                 }
             }).fail(function(){
             	swal({
@@ -96,4 +116,4 @@
                   text: "Por favor intentalo nuevamente.",
                   type: "error" });
             });
-    })</script>  
+    })</script>
