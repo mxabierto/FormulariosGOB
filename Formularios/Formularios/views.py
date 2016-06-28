@@ -11,7 +11,7 @@ def informa(request):
 
 
 def reportar(request):
-	return render(request, 'reportar.html', {'media_url': request.GET.get('media_url', '')})
+	return render(request, 'reportar.html', {'media_url': request.GET.get('media_url', ''), 'GOOGLE_FORM_URL': settings.GOOGLE_FORM_URL, 'GOOGLE_FORM_ID': settings.GOOGLE_FORM_ID})
 
 
 @csrf_exempt

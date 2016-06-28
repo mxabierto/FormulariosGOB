@@ -131,3 +131,6 @@ STATIC_URL = os.environ.get('CDN_STATIC_FILES_URL', 'http://datos.gob.mx/formula
 MAIL_GUN_API_KEY = os.environ.get('MAIL_GUN_API_KEY', None)
 TO_MAIL_GUN = os.environ.get('TO_MAIL_GUN', None)
 
+# GOOGLE FORMS SETTINGS
+GOOGLE_FORM_URL = os.environ.get('GOOGLE_FORM_URL', '')
+GOOGLE_FORM_ID = os.environ.get('GOOGLE_FORM_ID', '')
