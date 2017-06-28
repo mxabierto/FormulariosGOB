@@ -136,3 +136,5 @@ TO_MAIL_GUN = os.environ.get('TO_MAIL_GUN', None)
 GOOGLE_FORM_URL = os.environ.get('GOOGLE_FORM_URL', '')
 GOOGLE_FORM_ID = os.environ.get('GOOGLE_FORM_ID', '')
 RESET_FOOTER_URL = os.environ.get('RESET_FOOTER_URL', 'https://cdn.datos.gob.mx/qa/bower_components/dgm-style/reset-footer.css')
+
+CDN_GOB_ROOT_URL = os.environ.get('CDN_GOB_ROOT_URL')
