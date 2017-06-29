@@ -7,11 +7,11 @@ from django.http import JsonResponse, Http404
 
 
 def informa(request):
-	return render(request, 'informa.html', {'organization': request.GET.get('organization', '')})
+	return render(request, 'informa.html', {'organization': request.GET.get('organization', ''), 'RESET_FOOTER_URL': settings.RESET_FOOTER_URL})
 
 
 def reportar(request):
-	return render(request, 'reportar.html', {'media_url': request.GET.get('media_url', ''), 'GOOGLE_FORM_URL': settings.GOOGLE_FORM_URL, 'GOOGLE_FORM_ID': settings.GOOGLE_FORM_ID})
+	return render(request, 'reportar.html', {'media_url': request.GET.get('media_url', ''), 'GOOGLE_FORM_URL': settings.GOOGLE_FORM_URL, 'GOOGLE_FORM_ID': settings.GOOGLE_FORM_ID, 'RESET_FOOTER_URL': settings.RESET_FOOTER_URL})
 
 
 @csrf_exempt
