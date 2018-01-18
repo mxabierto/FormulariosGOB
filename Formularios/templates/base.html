@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+   <head>
+      <meta charset="utf-8">
+      <title>{% block title %}{% endblock %} - Catálogo de Datos Abiertos</title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width">
+      <!-- Place favicon.ico and apple-touch-icon.png in the root directory --> 
+      <link rel="shortcut icon" href="img/favicon.ico">
+      <link rel="stylesheet" href="http://cdn.datos.gob.mx/assets/css/main.css">
+      <link rel="import" href="{{CDN_GOB_ROOT_URL}}bower_components/polymer/polymer.html">
+      <link rel="import" href="{{CDN_GOB_ROOT_URL}}bower_components/dgm-navbar/dgm-navbar.html">
+      <link rel="import" href="{{CDN_GOB_ROOT_URL}}bower_components/dgm-footer/dgm-footer.html">
+   </head>
+    <body class="front">
+        <main>
+            <dgm-navbar></dgm-navbar>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        {% block content %}{% endblock content %}
+                    </div>
+                </div>
+            </div>
+            <dgm-footer></dgm-footer>
+        </main>
+        <!-- JS -->
+        <script src="https://cdn.datos.gob.mx/assets/js/main.js"></script>
+        {% block scripts %}{% endblock %}
+    </body>
+</html>
