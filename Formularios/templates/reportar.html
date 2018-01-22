@@ -1,94 +1,116 @@
+{% extends "base.html" %}
 {% load staticfiles %}
-<!DOCTYPE html> <html lang="es"> <head> <meta charset="utf-8"> <title>Catálogo de Datos Abiertos</title> <meta name="description" content=""> <meta name="viewport" content="width=device-width"> <!-- Place favicon.ico and apple-touch-icon.png in the root directory --> <link rel="shortcut icon" href="img/favicon.ico"><link rel="stylesheet" href="{% static "formularios/css/vendor.2107989e.css" %}"> <link rel="stylesheet" href="{% static "formularios/css/style.4a96c47a.css" %}"> <link rel="stylesheet" type="text/css" href="{{RESET_FOOTER_URL}}"><link rel="import" href="{{CDN_GOB_ROOT_URL}}bower_components/polymer/polymer.html"> <link rel="import" href="{{CDN_GOB_ROOT_URL}}bower_components/dgm-navbar/dgm-navbar.html"> <link rel="import" href="{{CDN_GOB_ROOT_URL}}bower_components/dgm-footer/dgm-footer.html"> </head>  <body> <dgm-navbar></dgm-navbar> <div class="container-fluid" style="margin-top:20px"> <div class="row" style="margin-top: 100px;"> <div class="col-md-12"> <h1>Reportar un Conjunto | <strong class="text-higlight">BETA</strong></h1> <div id="report-container" class="row"> <div class="col-md-8"> <p>Esta no es una solicitud de transparencia al INAI.</p> <p>Utilice el siguiente formulario para reportar un problema o solución que haya identificado para este recurso de datos. El reporte se le enviará automáticamente al encargado de generar y actualizar los datos con el fin de mejorar continuamente su calidad y/o accesibilidad a través de esta retroalimentación.</p> <p>Sus datos personales no son obligatorios para este formulario aunque dejar su nombre y correo electrónico pueden ayudar a darle seguimiento al reporte. Para obtener detalles adicionales, consulte nuestra política de privacidad.</p>
-    <form action="{{GOOGLE_FORM_URL}}" target="_self" method="POST" id="{{GOOGLE_FORM_ID}}">
-        <div class="form-group"> <label for="url">URL del recurso</label> <input type="text" name="url" class="form-control" value="" disabled id="urlInputText"> <input name="entry.1197475193" type="hidden" value="" id="urlInput"> </div>
-        <div class="form-group"> <label for="dataset">Título del problema</label> <input type="text" name="entry.1908722232" class="form-control" id="titulo"> </div>
-        <div class="form-group"> <label for="type">Tipo de problema</label> <div class="custom-select"> <select name="entry.1478375003" class="form-control" id="tipo"> <option value="">Selecciona un tipo de problema <option value="Calidad">Calidad <option value="Metadatos">Metadatos <option value="URL rota">URL rota <option value="Datos incompletos">Datos incompletos </select> </div> </div>
-            <div class="form-group"> <label for="description">Descripción del problema</label> <input type="text" name="entry.1133113920" class="form-control" id="descripcion"> </div>
-            <h2><strong>Datos de Contacto</strong> | Opcional</h2>
-            <div class="form-group"> <label for="name">Nombre</label> <input type="text" for="name" class="form-control" id="nombre" name="entry.2122328348"> </div>
-            <div class="form-group"> <label for="last_name">Apellido</label> <input type="text" for="last_name" class="form-control" id="apellido" name="entry.2023976079"> </div>
-            <div class="form-group"> <label for="email">Correo electrónico</label> <input type="emal" for="email" class="form-control" id="correo" name="entry.1542711411"> </div>
-            <button type="submit" class="btn btn-primary">Enviar</button>
-            <p><a href="privacy.html">Consulta nuestro aviso de privacidad</a></p>
-    </form>
-</div>
-</div>
-</div>
-</div>
-</div>
-<dgm-footer></dgm-footer>
+
+{% block title %}Reporta{% endblock %}
+
+{% block content %}
+  <h1 class="section-title">Reportar un Conjunto | <strong class="text-higlight">BETA</strong></h1>
+  <div id="report-container" class="row">
+    <div class="col-md-8">
+        <p>Esta no es una solicitud de transparencia al INAI.</p>
+        <p>Utilice el siguiente formulario para reportar un problema o solución que haya identificado para este recurso de datos. El reporte se le enviará automáticamente al encargado de generar y actualizar los datos con el fin de mejorar continuamente su calidad y/o accesibilidad a través de esta retroalimentación.</p>
+        <p>Sus datos personales no son obligatorios para este formulario aunque dejar su nombre y correo electrónico pueden ayudar a darle seguimiento al reporte. Para obtener detalles adicionales, consulte nuestra política de privacidad.</p>
+        <form action="{{GOOGLE_FORM_URL}}" target="_self" method="POST" id="{{GOOGLE_FORM_ID}}">
+          <div class="form-group"> <label for="url">URL del recurso</label> <input type="text" name="url" class="form-control" value="" disabled id="urlInputText"> <input name="entry.1197475193" type="hidden" value="" id="urlInput"> </div>
+          <div class="form-group"> <label for="dataset">Título del problema</label> <input type="text" name="entry.1908722232" class="form-control" id="titulo"> </div>
+          <div class="form-group">
+              <label for="type">Tipo de problema</label> 
+              <div class="custom-select">
+                <select name="entry.1478375003" class="form-control" id="tipo">
+                    <option value="">Selecciona un tipo de problema 
+                    <option value="Calidad">Calidad 
+                    <option value="Metadatos">Metadatos 
+                    <option value="URL rota">URL rota 
+                    <option value="Datos incompletos">Datos incompletos 
+                </select>
+              </div>
+          </div>
+          <div class="form-group"> <label for="description">Descripción del problema</label> <input type="text" name="entry.1133113920" class="form-control" id="descripcion"> </div>
+          <h2><strong>Datos de Contacto</strong> | Opcional</h2>
+          <div class="form-group"> <label for="name">Nombre</label> <input type="text" for="name" class="form-control" id="nombre" name="entry.2122328348"> </div>
+          <div class="form-group"> <label for="last_name">Apellido</label> <input type="text" for="last_name" class="form-control" id="apellido" name="entry.2023976079"> </div>
+          <div class="form-group"> <label for="email">Correo electrónico</label> <input type="emal" for="email" class="form-control" id="correo" name="entry.1542711411"> </div>
+          <button type="submit" class="btn btn-primary">Enviar</button>
+          <p><a href="privacy.html">Consulta nuestro aviso de privacidad</a></p>
+        </form>
+    </div>
+  </div>
+{% endblock %}
+
+{% block scripts %}
 <script src="{% static "formularios/js/vendor.50182432.js" %}"></script>
 <script type="text/javascript">
-    urlRef = window.location.href.split('?')[1].replace('media_url=','');
-    $('#urlInput').val(urlRef);
-    $('#urlInputText').val(urlRef);
-    function getCookie(name) {
-      var cookieValue = null;
-      if (document.cookie && document.cookie != '') {
-          var cookies = document.cookie.split(';');
-          for (var i = 0; i < cookies.length; i++) {
-              var cookie = jQuery.trim(cookies[i]);
-              // Does this cookie string begin with the name we want?
-              if (cookie.substring(0, name.length + 1) == (name + '=')) {
-                  cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                  break;
-              }
-          }
-      }
-      return cookieValue;
-    }
-    var csrftoken = getCookie('csrftoken');
-
-        function csrfSafeMethod(method) {
-            // these HTTP methods do not require CSRF protection
-            return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
-        }
-        $.ajaxSetup({
-            beforeSend: function(xhr, settings) {
-                if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
-                    xhr.setRequestHeader("X-CSRFToken", csrftoken);
-                }
-            }
-        });
-
-        $('#reportForm').formValidation({
-          framework: 'bootstrap',
-          fields : {
-            titulo : {
-              selector: '#titulo',
-              validators : {
-                notEmpty : {
-                  message : 'Este campo es obligatorio'
-                }
-              }
-            },
-            tipo : {
-              selector: '#tipo',
-              validators : {
-                notEmpty : {
-                  message : 'Este campo es obligatorio'
-                }
-              }
-            },
-            descripcion : {
-              selector: '#descripcion',
-              validators : {
-                notEmpty : {
-                  message : 'Este campo es obligatorio'
-                }
-              }
-            },
-          }
-        })
-        .on('err.field.fv', function(e, data) {
-          data.fv.disableSubmitButtons(false);
-        })
-        .on('success.field.fv', function(e,data) {
-          data.fv.disableSubmitButtons(false);
-        })
-        .on('success.form.fv', function(e, data) {
-
-          e.preventDefault();
-          swal({confirmButtonText: "CERRAR", title: "Muchas gracias por tu participación", type: "success" });
-    })</script>
+   urlRef = window.location.href.split('?')[1].replace('media_url=','');
+   $('#urlInput').val(urlRef);
+   $('#urlInputText').val(urlRef);
+   function getCookie(name) {
+     var cookieValue = null;
+     if (document.cookie && document.cookie != '') {
+         var cookies = document.cookie.split(';');
+         for (var i = 0; i < cookies.length; i++) {
+             var cookie = jQuery.trim(cookies[i]);
+             // Does this cookie string begin with the name we want?
+             if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                 cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                 break;
+             }
+         }
+     }
+     return cookieValue;
+   }
+   var csrftoken = getCookie('csrftoken');
+   
+       function csrfSafeMethod(method) {
+           // these HTTP methods do not require CSRF protection
+           return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+       }
+       $.ajaxSetup({
+           beforeSend: function(xhr, settings) {
+               if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                   xhr.setRequestHeader("X-CSRFToken", csrftoken);
+               }
+           }
+       });
+   
+       $('#reportForm').formValidation({
+         framework: 'bootstrap',
+         fields : {
+           titulo : {
+             selector: '#titulo',
+             validators : {
+               notEmpty : {
+                 message : 'Este campo es obligatorio'
+               }
+             }
+           },
+           tipo : {
+             selector: '#tipo',
+             validators : {
+               notEmpty : {
+                 message : 'Este campo es obligatorio'
+               }
+             }
+           },
+           descripcion : {
+             selector: '#descripcion',
+             validators : {
+               notEmpty : {
+                 message : 'Este campo es obligatorio'
+               }
+             }
+           },
+         }
+       })
+       .on('err.field.fv', function(e, data) {
+         data.fv.disableSubmitButtons(false);
+       })
+       .on('success.field.fv', function(e,data) {
+         data.fv.disableSubmitButtons(false);
+       })
+       .on('success.form.fv', function(e, data) {
+   
+         e.preventDefault();
+         swal({confirmButtonText: "CERRAR", title: "Muchas gracias por tu participación", type: "success" });
+   })
+  </script>
+{% endblock %}
