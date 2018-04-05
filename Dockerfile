@@ -1,4 +1,4 @@
-FROM python:2.7
+FROM python:3.5-alpine
 MAINTAINER Francisco Vaquero <francisco@opi.la>
 
 ENV DJANGO_HOME=Django

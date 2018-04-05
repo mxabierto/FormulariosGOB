@@ -8,61 +8,91 @@
     <div id="report-container" class="row">
         <div class="col-md-8">
             <p>Esta no es una solicitud de transparencia al INAI.</p>
-            <p>Al llenar este formulario nos ayudarás a entender y definir la prioridad con la que se publican y trabajan los datos publicados en datos.gob.mx. Agradecemos su participación con el fin de mejorar la calidad y/o disponibilidad de los Datos Abiertos a través de esta retroalimentación.</p>
-            <p>Sus datos personales no son obligatorios para este formulario aunque dejar su nombre y correo electrónico pueden ayudar a darle seguimiento al reporte. Para obtener detalles adicionales, consulte nuestra política de privacidad.</p>
-            <form id="requestForms" action="https://docs.google.com/a/fractalmedia.mx/forms/d/19eUXMjLC8HL4O5_6M4TmRGmIm6c4d0afMPiduSeR0A4/formResponse">
-            <div class="form-group form-group-lg"> <label for="url">Institución generadora</label> <input type="text" class="form-control" value="" disabled id="instInputText" name="org"> <input type="hidden" value="" id="instInput" name="entry.246679179"> </div>
-            <div class="form-group form-group-lg"> <label for="dataset">Nombre del conjunto de datos</label> <input type="text" class="form-control" id="datos" name="entry.515545723"> </div>
-            <div class="form-group form-group-lg"> <label for="description">Descripción del conjunto de datos</label> <textarea rows="4" class="form-control" id="descripcion" name="entry.1190868688"></textarea> </div>
-            <div class="form-group form-group-lg hidden">
-                <label for="type">Tipo de datos</label> 
-                <div> <label class="radio-inline"> <input type="radio" name="type" value="table"> Tabla </label> <label class="radio-inline"> <input type="radio" name="type" value="map"> Mapa </label> <label class="radio-inline"> <input type="radio" name="type" value="text"> Texto </label> </div>
-            </div>
-            <div class="form-group form-group-lg hidden">
-                <label for="temporary_resolution">Resolución temporal</label> 
-                <div class="custom-select">
-                    <select name="temporary_resolution" class="form-control">
-                        <option>Selecciona una resolución 
-                    </select>
-                </div>
-            </div>
-            <div class="form-group form-group-lg hidden">
-                <label for="geographic_resolution">Resolución geografica</label> 
-                <div class="custom-select">
-                    <select name="geographic_resolution" class="form-control">
-                        <option>Selecciona una resolución 
-                    </select>
-                </div>
-            </div>
-            <div class="form-group form-group-lg hidden">
-                <label>Rango de fechas</label> 
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="form-group form-group-lg">
-                        <label for="from">Desde</label> 
-                        <div class="input-group">
-                            <input type="text" name="from" class="form-control datepicker" placeholder="dd/mm/aaaa"> 
-                            <div class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></div>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group form-group-lg">
-                        <label for="to">Hasta</label> 
-                        <div class="input-group">
-                            <input type="text" name="to" class="form-control datepicker" placeholder="dd/mm/aaaa"> 
-                            <div class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></div>
-                        </div>
-                        </div>
+            <p>Al llenar este formulario nos ayudarás a entender y definir la prioridad con la que se publican y trabajan los datos
+                publicados en datos.gob.mx. Agradecemos su participación con el fin de mejorar la calidad y/o disponibilidad de los
+                Datos Abiertos a través de esta retroalimentación.</p>
+            <p>Sus datos personales no son obligatorios para este formulario aunque dejar su nombre y correo electrónico pueden ayudar
+                a darle seguimiento al reporte. Para obtener detalles adicionales, consulte nuestra política de privacidad.</p>
+            <form id="informaForm" action="https://docs.google.com/a/fractalmedia.mx/forms/d/19eUXMjLC8HL4O5_6M4TmRGmIm6c4d0afMPiduSeR0A4/formResponse">
+                <div class="form-group form-group-lg">
+                    <label for="url">Institución generadora</label>
+                    <input type="text" class="form-control" value="" disabled id="instInputText" name="org">
+                    <input type="hidden" value="" id="instInput" name="entry.246679179"> </div>
+                <div class="form-group form-group-lg">
+                    <label for="dataset">Nombre del conjunto de datos</label>
+                    <input type="text" class="form-control" id="datos" name="entry.515545723"> </div>
+                <div class="form-group form-group-lg">
+                    <label for="description">Descripción del conjunto de datos</label>
+                    <textarea rows="4" class="form-control" id="descripcion" name="entry.1190868688"></textarea> </div>
+                <div class="form-group form-group-lg hidden">
+                    <label for="type">Tipo de datos</label>
+                    <div>
+                        <label class="radio-inline">
+                            <input type="radio" name="type" value="table"> Tabla </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="type" value="map"> Mapa </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="type" value="text"> Texto </label>
                     </div>
                 </div>
-            </div>
-            <h2><strong>Datos de Contacto</strong> | Opcional</h2>
-            <div class="form-group form-group-lg"> <label for="name">Nombre</label> <input type="text" for="name" class="form-control" id="nombre" name="entry.1094111952"> </div>
-            <div class="form-group form-group-lg"> <label for="last_name">Apellido</label> <input type="text" for="last_name" class="form-control" id="apellido" name="entry.1350117394"> </div>
-            <div class="form-group form-group-lg"> <label for="email">Correo electrónico</label> <input type="emal" for="email" class="form-control" id="correo" name="entry.1865898926"> </div>
-            <button type="submit" class="btn btn-primary btn-lg-informa">Enviar</button> 
-            <p><a href="privacy.html">Consulta nuestro aviso de privacidad</a></p>
+                <div class="form-group form-group-lg hidden">
+                    <label for="temporary_resolution">Resolución temporal</label>
+                    <div class="custom-select">
+                        <select name="temporary_resolution" class="form-control">
+                            <option>Selecciona una resolución
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group form-group-lg hidden">
+                    <label for="geographic_resolution">Resolución geografica</label>
+                    <div class="custom-select">
+                        <select name="geographic_resolution" class="form-control">
+                            <option>Selecciona una resolución
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group form-group-lg hidden">
+                    <label>Rango de fechas</label>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group form-group-lg">
+                                <label for="from">Desde</label>
+                                <div class="input-group">
+                                    <input type="text" name="from" class="form-control datepicker" placeholder="dd/mm/aaaa">
+                                    <div class="input-group-addon">
+                                        <i class="glyphicon glyphicon-calendar"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group form-group-lg">
+                                <label for="to">Hasta</label>
+                                <div class="input-group">
+                                    <input type="text" name="to" class="form-control datepicker" placeholder="dd/mm/aaaa">
+                                    <div class="input-group-addon">
+                                        <i class="glyphicon glyphicon-calendar"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h2>
+                    <strong>Datos de Contacto</strong> | Opcional</h2>
+                <div class="form-group form-group-lg">
+                    <label for="name">Nombre</label>
+                    <input type="text" for="name" class="form-control" id="nombre" name="entry.1094111952"> </div>
+                <div class="form-group form-group-lg">
+                    <label for="last_name">Apellido</label>
+                    <input type="text" for="last_name" class="form-control" id="apellido" name="entry.1350117394"> </div>
+                <div class="form-group form-group-lg">
+                    <label for="email">Correo electrónico</label>
+                    <input type="emal" for="email" class="form-control" id="correo" name="entry.1865898926"> </div>
+                <button type="submit" class="btn btn-primary btn-lg-informa">Enviar</button>
+                <p>
+                    <a href="privacy.html">Consulta nuestro aviso de privacidad</a>
+                </p>
             </form>
         </div>
     </div>
@@ -76,7 +106,12 @@
     });
  </script>
  <script type="text/javascript">
-    var org = window.location.href.split('?')[1].replace('organization=','');
+    var org = "";
+    if(window.location.href.indexOf("organization=") > 0){
+        org = window.location.href.split('?')[1].replace('organization=','');
+      }else{
+       $(".btn-lg-informa").attr('disabled', 'true');
+      }
     $('#instInput').val(org);
     $('#instInputText').val(org);
     
@@ -109,25 +144,49 @@
             }
         });
     
-        $('#requestForm').formValidation({
+        $('#informaForm').formValidation({
           framework: 'bootstrap',
-          fields : {
-            datos : {
-              selector: '#datos',
-              validators : {
-                notEmpty : {
-                  message : 'Este campo es obligatorio'
-                }
-              }
-            },
-            descripcion : {
-              selector: '#descripcion',
-              validators : {
-                notEmpty : {
-                  message : 'Este campo es obligatorio'
-                }
-              }
-            },
+            fields: {
+                datos: {
+                    selector: '#datos',
+                    validators: {
+                        notEmpty: {
+                            message: 'Este campo es obligatorio'
+                        }
+                    }
+                },
+                descripcion: {
+                    selector: '#descripcion',
+                    validators: {
+                        notEmpty: {
+                            message: 'Este campo es obligatorio'
+                        }
+                    }
+                },
+                nombre: {
+                    selector: '#nombre',
+                    validators: {
+                        notEmpty: {
+                            message: 'Este campo es obligatorio'
+                        }
+                    }
+                },
+                apellido: {
+                    selector: '#apellido',
+                    validators: {
+                        notEmpty: {
+                            message: 'Este campo es obligatorio'
+                        }
+                    }
+                },
+                correo: {
+                    selector: '#correo',
+                    validators: {
+                        notEmpty: {
+                            message: 'Este campo es obligatorio'
+                        }
+                    }
+                },
           }
         })
         .on('err.field.fv', function(e, data) {
