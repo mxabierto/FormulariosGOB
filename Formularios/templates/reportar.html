@@ -4,35 +4,62 @@
 {% block title %}Reporta{% endblock %}
 
 {% block content %}
-  <h1 class="section-title">Reportar un Conjunto | <strong class="text-higlight">BETA</strong></h1>
+  <h1 class="section-title">Reportar un Conjunto |
+    <strong class="text-higlight">BETA</strong>
+  </h1>
   <div id="report-container" class="row">
     <div class="col-md-8">
-        <p>Esta no es una solicitud de transparencia al INAI.</p>
-        <p>Utilice el siguiente formulario para reportar un problema o solución que haya identificado para este recurso de datos. El reporte se le enviará automáticamente al encargado de generar y actualizar los datos con el fin de mejorar continuamente su calidad y/o accesibilidad a través de esta retroalimentación.</p>
-        <p>Sus datos personales no son obligatorios para este formulario aunque dejar su nombre y correo electrónico pueden ayudar a darle seguimiento al reporte. Para obtener detalles adicionales, consulte nuestra política de privacidad.</p>
-        <form action="{{GOOGLE_FORM_URL}}" target="_self" method="POST" id="{{GOOGLE_FORM_ID}}">
-          <div class="form-group form-group-lg"> <label for="url">URL del recurso</label> <input type="text" name="url" class="form-control" value="" disabled id="urlInputText"> <input name="entry.1197475193" type="hidden" value="" id="urlInput"> </div>
-          <div class="form-group form-group-lg"> <label for="dataset">Título del problema</label> <input type="text" name="entry.1908722232" class="form-control" id="titulo"> </div>
-          <div class="form-group form-group-lg">
-              <label for="type">Tipo de problema</label> 
-              <div class="custom-select">
-                <select name="entry.1478375003" class="form-control" id="tipo">
-                    <option value="">Selecciona un tipo de problema 
-                    <option value="Calidad">Calidad 
-                    <option value="Metadatos">Metadatos 
-                    <option value="URL rota">URL rota 
-                    <option value="Datos incompletos">Datos incompletos 
-                </select>
-              </div>
+      <p>Esta no es una solicitud de transparencia al INAI.</p>
+      <p>Utilice el siguiente formulario para reportar un problema o solución que haya identificado para este recurso de datos.
+        El reporte se le enviará automáticamente al encargado de generar y actualizar los datos con el fin de mejorar continuamente
+        su calidad y/o accesibilidad a través de esta retroalimentación.</p>
+      <p>Sus datos personales no son obligatorios para este formulario aunque dejar su nombre y correo electrónico pueden ayudar
+        a darle seguimiento al reporte. Para obtener detalles adicionales, consulte nuestra política de privacidad.</p>
+      <form action="{{GOOGLE_FORM_URL}}" id="{{GOOGLE_FORM_ID}}" class="reportaForm">
+        <div class="form-group form-group-lg">
+          <label for="url">URL del recurso</label>
+          <input type="text" name="url" class="form-control" value="" disabled id="urlInputText">
+          <input name="entry.1197475193" type="hidden" value="" id="urlInput">
+        </div>
+        <div class="form-group form-group-lg">
+          <label for="dataset">Título del problema</label>
+          <input type="text" name="entry.1908722232" class="form-control" id="titulo">
+        </div>
+        <div class="form-group form-group-lg">
+          <label for="type">Tipo de problema</label>
+          <div class="custom-select">
+            <select name="entry.1478375003" class="form-control" id="tipo" style="padding: 0 10px !important; border: 1px solid #ccc;">
+              <option value="">Selecciona un tipo de problema</option>
+              <option value="Calidad">Calidad</option>
+              <option value="Metadatos">Metadatos</option>
+              <option value="URL rota">URL rota</option>
+              <option value="Datos incompletos">Datos incompletos</option>
+            </select>
           </div>
-          <div class="form-group form-group-lg"> <label for="description">Descripción del problema</label> <input type="text" name="entry.1133113920" class="form-control" id="descripcion"> </div>
-          <h2><strong>Datos de Contacto</strong> | Opcional</h2>
-          <div class="form-group form-group-lg"> <label for="name">Nombre</label> <input type="text" for="name" class="form-control" id="nombre" name="entry.2122328348"> </div>
-          <div class="form-group form-group-lg"> <label for="last_name">Apellido</label> <input type="text" for="last_name" class="form-control" id="apellido" name="entry.2023976079"> </div>
-          <div class="form-group form-group-lg"> <label for="email">Correo electrónico</label> <input type="emal" for="email" class="form-control" id="correo" name="entry.1542711411"> </div>
-          <button type="submit" class="btn btn-primary btn-lg-informa">Enviar</button>
-          <p><a href="privacy.html">Consulta nuestro aviso de privacidad</a></p>
-        </form>
+        </div>
+        <div class="form-group form-group-lg">
+          <label for="description">Descripción del problema</label>
+          <input type="text" name="entry.1133113920" class="form-control" id="descripcion">
+        </div>
+        <h2>
+          <strong>Datos de Contacto</strong> | Opcional</h2>
+        <div class="form-group form-group-lg">
+          <label for="name">Nombre</label>
+          <input type="text" for="name" class="form-control" id="nombre" name="entry.2122328348">
+        </div>
+        <div class="form-group form-group-lg">
+          <label for="last_name">Apellido</label>
+          <input type="text" for="last_name" class="form-control" id="apellido" name="entry.2023976079">
+        </div>
+        <div class="form-group form-group-lg">
+          <label for="email">Correo electrónico</label>
+          <input type="emal" for="email" class="form-control" id="correo" name="entry.1542711411">
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg-informa">Enviar</button>
+        <p>
+          <a href="privacy.html">Consulta nuestro aviso de privacidad</a>
+        </p>
+      </form>
     </div>
   </div>
 {% endblock %}
@@ -40,7 +67,12 @@
 {% block scripts %}
 <script src="{% static "formularios/js/vendor.50182432.js" %}"></script>
 <script type="text/javascript">
-   urlRef = window.location.href.split('?')[1].replace('media_url=','');
+   var urlRef = "";
+   if(window.location.href.indexOf("media_url") > 0){
+     urlRef = window.location.href.split('?')[1].replace('media_url=','');
+   }else{
+    $(".btn-lg-informa").attr('disabled', 'true');
+   }
    $('#urlInput').val(urlRef);
    $('#urlInputText').val(urlRef);
    function getCookie(name) {
@@ -71,36 +103,77 @@
                }
            }
        });
-   
-       $('#reportForm').formValidation({
-         framework: 'bootstrap',
-         fields : {
-           titulo : {
-             selector: '#titulo',
-             validators : {
-               notEmpty : {
-                 message : 'Este campo es obligatorio'
-               }
-             }
-           },
-           tipo : {
-             selector: '#tipo',
-             validators : {
-               notEmpty : {
-                 message : 'Este campo es obligatorio'
-               }
-             }
-           },
-           descripcion : {
-             selector: '#descripcion',
-             validators : {
-               notEmpty : {
-                 message : 'Este campo es obligatorio'
-               }
-             }
-           },
-         }
-       })
+
+       $('.reportaForm').formValidation({
+          ignore: ":hidden",
+          framework: 'bootstrap',
+          fields: {
+            url: {
+              selector: '#url',
+              validators: {
+                notEmpty: {
+                  message: 'Este campo es obligatorio'
+                }
+              }
+            },
+            urlInputText: {
+              selector: '#urlInputText',
+              validators: {
+                notEmpty: {
+                  message: 'Este campo es obligatorio'
+                }
+              }
+            },
+            titulo: {
+              selector: '#titulo',
+              validators: {
+                notEmpty: {
+                  message: 'Este campo es obligatorio'
+                }
+              }
+            },
+            tipo: {
+              selector: '#tipo',
+              validators: {
+                notEmpty: {
+                  message: 'Este campo es obligatorio'
+                }
+              }
+            },
+            descripcion: {
+              selector: '#descripcion',
+              validators: {
+                notEmpty: {
+                  message: 'Este campo es obligatorio'
+                }
+              }
+            },
+            nombre: {
+              selector: '#nombre',
+              validators: {
+                notEmpty: {
+                  message: 'Este campo es obligatorio'
+                }
+              }
+            },
+            apellido: {
+              selector: '#apellido',
+              validators: {
+                notEmpty: {
+                  message: 'Este campo es obligatorio'
+                }
+              }
+            },
+            correo: {
+              selector: '#correo',
+              validators: {
+                notEmpty: {
+                  message: 'Este campo es obligatorio'
+                }
+              }
+            },
+          }
+        })
        .on('err.field.fv', function(e, data) {
          data.fv.disableSubmitButtons(false);
        })
@@ -108,7 +181,6 @@
          data.fv.disableSubmitButtons(false);
        })
        .on('success.form.fv', function(e, data) {
-   
          e.preventDefault();
          swal({confirmButtonText: "CERRAR", title: "Muchas gracias por tu participación", type: "success" });
    })
