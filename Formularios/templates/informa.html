@@ -11,8 +11,6 @@
             <p>Al llenar este formulario nos ayudarás a entender y definir la prioridad con la que se publican y trabajan los datos
                 publicados en datos.gob.mx. Agradecemos su participación con el fin de mejorar la calidad y/o disponibilidad de los
                 Datos Abiertos a través de esta retroalimentación.</p>
-            <p>Sus datos personales no son obligatorios para este formulario aunque dejar su nombre y correo electrónico pueden ayudar
-                a darle seguimiento al reporte. Para obtener detalles adicionales, consulte nuestra política de privacidad.</p>
             <form id="informaForm" action="https://docs.google.com/a/fractalmedia.mx/forms/d/19eUXMjLC8HL4O5_6M4TmRGmIm6c4d0afMPiduSeR0A4/formResponse">
                 <div class="form-group form-group-lg">
                     <label for="url">Institución generadora</label>
@@ -91,7 +89,7 @@
                     <input type="emal" for="email" class="form-control" id="correo" name="entry.1865898926"> </div>
                 <button type="submit" class="btn btn-primary btn-lg-informa">Enviar</button>
                 <p>
-                    <a href="privacy.html">Consulta nuestro aviso de privacidad</a>
+                    <a href="https://www.gob.mx/privacidadsimplificado">Consulta nuestro aviso de privacidad</a>
                 </p>
             </form>
         </div>
@@ -109,9 +107,10 @@
     var org = "";
     if(window.location.href.indexOf("organization=") > 0){
         org = window.location.href.split('?')[1].replace('organization=','');
-      }else{
+    }
+    if(!org){
        $(".btn-lg-informa").attr('disabled', 'true');
-      }
+    }
     $('#instInput').val(org);
     $('#instInputText').val(org);
     
@@ -198,7 +197,6 @@
         .on('success.form.fv', function(e, data) {
     
           e.preventDefault();
-          swal({confirmButtonText: "CERRAR", title: "Muchas gracias por tu participación", type: "success" });
     
           // var instContent = $('#instInput').val();
           // var datosContent = $('#datos').val();
