@@ -15,7 +15,7 @@
         su calidad y/o accesibilidad a través de esta retroalimentación.</p>
       <form action="{{GOOGLE_FORM_URL}}" id="{{GOOGLE_FORM_ID}}" class="reportaForm">
         <div class="form-group form-group-lg">
-          <label for="url">URL del recurso</label>
+          <label for="url">URL del conjunto</label>
           <input type="text" name="url" class="form-control" value="" disabled id="urlInputText">
           <input name="entry.1197475193" type="hidden" value="" id="urlInput">
         </div>
@@ -165,9 +165,13 @@
             },
             correo: {
               selector: '#correo',
+              email: true,
               validators: {
                 notEmpty: {
                   message: 'Este campo es obligatorio'
+                },
+                emailAddress: {
+                  message: 'Dirección de correo no valida'
                 }
               }
             },
@@ -180,7 +184,7 @@
          data.fv.disableSubmitButtons(false);
        })
        .on('success.form.fv', function(e, data) {
-         e.preventDefault();
+         //.preventDefault();
    })
   </script>
 {% endblock %}

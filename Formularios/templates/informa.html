@@ -180,9 +180,13 @@
                 },
                 correo: {
                     selector: '#correo',
+                    email: true,
                     validators: {
                         notEmpty: {
                             message: 'Este campo es obligatorio'
+                        },
+                        emailAddress: {
+                            message: 'Dirección de correo no valida'
                         }
                     }
                 },
@@ -196,7 +200,7 @@
         })
         .on('success.form.fv', function(e, data) {
     
-          e.preventDefault();
+          //e.preventDefault();
     
           // var instContent = $('#instInput').val();
           // var datosContent = $('#datos').val();
